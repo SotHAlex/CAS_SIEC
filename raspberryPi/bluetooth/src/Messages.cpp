@@ -13,6 +13,45 @@ Messages::Messages(char l, char cid, char main_id,int32_t val, int32_t val2){
 Messages::~Messages(){
 }
 
+void Messages::display(){
+	switch(level){
+		case 0x00 :
+			std::cout<<"cmd"<<std::endl;
+			break;
+		default : 
+			std::cout<<"other"<<std::endl;
+			break;
+	}
+	
+	switch(complementaryID){
+		case 0x00 :
+			std::cout<<"UserCmd"<<std::endl;
+			break;
+		default : 
+			std::cout<<"other"<<std::endl;
+			break;
+	}
+	
+	switch(id){
+		case 0x08 :
+			std::cout<<"front"<<std::endl;
+			break;
+		case 0x04 :
+			std::cout<<"back"<<std::endl;
+			break;
+		case 0x02 :
+			std::cout<<"left"<<std::endl;
+			break;
+		case 0x01 :
+			std::cout<<"right"<<std::endl;
+			break;
+	}
+	
+	std::cout<<value<<std::endl;
+}
+
+//STATIC FUNCTIONS
+//From a string, create a Messages object
 Messages Messages::decode(std::string receivedBytes){
 	char level = (receivedBytes[0]&0xC0) >>6;
 	
@@ -26,6 +65,7 @@ Messages Messages::decode(std::string receivedBytes){
 	return msg;
 }
 
+//From a Messages object, create a string
 std::string Messages::encode(Messages msg){
 	std::string sentBytes;
 	
@@ -137,41 +177,4 @@ std::string Messages::encode(Messages msg){
 	}
 	
 	return sentMessage;
-}
-
-void Messages::display(){
-	switch(level){
-		case 0x00 :
-			std::cout<<"cmd"<<std::endl;
-			break;
-		default : 
-			std::cout<<"other"<<std::endl;
-			break;
-	}
-	
-	switch(complementaryID){
-		case 0x00 :
-			std::cout<<"UserCmd"<<std::endl;
-			break;
-		default : 
-			std::cout<<"other"<<std::endl;
-			break;
-	}
-	
-	switch(id){
-		case 0x08 :
-			std::cout<<"front"<<std::endl;
-			break;
-		case 0x04 :
-			std::cout<<"back"<<std::endl;
-			break;
-		case 0x02 :
-			std::cout<<"left"<<std::endl;
-			break;
-		case 0x01 :
-			std::cout<<"right"<<std::endl;
-			break;
-	}
-	
-	std::cout<<value<<std::endl;
 }

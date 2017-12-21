@@ -35,7 +35,6 @@ void BluetoothServer::sendMsg(const std::string & msg){
 std::string BluetoothServer::receiveMsg(){
   int bytes_read;
   char buf[1024] = { 0 };
-  //std::string msg;
   bytes_read = read(clientSocket, buf, sizeof(buf));
   return buf;
 }

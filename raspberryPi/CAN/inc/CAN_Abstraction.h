@@ -17,8 +17,8 @@ typedef union
 	float floatMessage[2];
 }data_paquet_t;
 
-//Represents a CAN frame with data and its id
-typedef struct{
+//Represents a CAN frame with its data and its id
+typedef struct {
 	data_paquet_t data;
 	int16_t id;
 }can_paquet_t;

@@ -1,5 +1,6 @@
 #include "Interfaces_Rasp.h"
 
+//Information concerning the car
 data_paquet_t posSteeringWheel;
 data_paquet_t posWheelsLR;
 data_paquet_t speedWheelsLR;

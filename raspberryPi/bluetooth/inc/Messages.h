@@ -49,18 +49,10 @@ class Messages {
 		int32_t value; 
 		int32_t value2;
 		
-		/*
-		Used for the reception
-		*/
-		
 		public : 
 		Messages(char l, char cid, char main_id,int32_t val, int32_t val2);
 		
 		~Messages();
-		
-		static Messages decode(std::string receivedBytes);
-		
-		static std::string encode(Messages msg);
 		
 		void display();
 		
@@ -84,5 +76,10 @@ class Messages {
 		int32_t getValue2(){
 			return value2;
 		}
+		
+		//Static functions, could be in another file
+		static Messages decode(std::string receivedBytes);
+		
+		static std::string encode(Messages msg);
 };
 #endif

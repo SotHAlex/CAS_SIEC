@@ -1,7 +1,7 @@
 #include "CAN_Periodic.h"
 #include <stdio.h>
 
-//Interbal variables
+//Internal variables
 periode_t* periode_;
 uint16_t current_periode_ = 0;
 uint16_t current_variable_ = 0;
