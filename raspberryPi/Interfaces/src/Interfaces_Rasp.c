@@ -11,6 +11,19 @@ data_paquet_t motorsOrder;
 data_paquet_t steeringWheelOrder;
 data_paquet_t battery;
 
+void initCarValue(){
+	posSteeringWheel.floatMessage[0]=0.0;
+	posSteeringWheel.floatMessage[1]=0.0;
+	posWheelsLR.floatMessage[0]=0.0;
+	posWheelsLR.floatMessage[1]=0.0;
+	USFrontBack.floatMessage[0]=1000.0;
+	USFrontBack.floatMessage[1]=1000.0;
+	USLeft.floatMessage[0]=1000.0;
+	USLeft.floatMessage[1]=1000.0;
+	USRight.floatMessage[0]=1000.0;
+	USRight.floatMessage[1]=1000.0;
+}
+
 data_paquet_t* linkPosSteeringWheel(){
 	return &posSteeringWheel;
 }

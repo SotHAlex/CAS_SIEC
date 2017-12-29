@@ -3,6 +3,8 @@
 
 #include "CAN_Abstraction.h"
 
+void initCarValue();
+
 data_paquet_t* linkPosSteeringWheel();
 
 data_paquet_t* linkPosWheelsLR();
